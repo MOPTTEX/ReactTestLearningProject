@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import Counter from "./components/Counter";
 import ClassCounter from "./components/ClassCounter";
-import './styles/App.css';
+import "./styles/App.css";
+import PostItem from "./components/PostItem";
 function App() {
-  const [value, setValue] = useState("ТЕКСТ");
+  const [posts, setPosts] = useState([
+    {id: 1, title: 'JavaScript', body: 'Description'},
+    {id: 2, title: 'JavaScript 2', body: 'Description'},
+    {id: 3, title: 'JavaScript 3', body: 'Description'},
+  ])
 
   return (
     <div className="App">
-      <div className="post">
-        <div className="post__content">
-          <strong>1. JavaScrpipt</strong>
-          <div>JavaScrpipt - язык программирования</div>
-        </div>
-        <button className="post__btns">Удалить</button>
-      </div>
+      {posts.map((post) =>
+        <PostItem post={post} key = {post.id}/>
+
+      )}
     </div>
   );
 }
