@@ -18,7 +18,7 @@ function App() {
         <PostItem post={{id: 4, title: 'JavaScript', body: 'Description'}}/>
 
         
-      
+      123
     </div>
   );
 }
