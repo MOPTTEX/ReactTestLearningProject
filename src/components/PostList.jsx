@@ -1,6 +1,6 @@
 import React from "react";
 import PostItem from "./PostItem";
-import { render } from '@testing-library/react';
+
 export default function PostList({ posts, title, remove }) {
   return (
     <div>
