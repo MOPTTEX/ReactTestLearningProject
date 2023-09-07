@@ -1,11 +1,13 @@
 import React from "react";
 
-export default function MySelect({ options, defaultValue }) {
+export default function MySelect({ options, defaultValue, value, onChange }) {
   return (
-    <select>
+    <select value={value}
+        onChange={event => onChange(event.target.value)}
+    >
       <option disabled={true} value="">{defaultValue}</option>
       {options.map(option => 
-        <option value={option.value}>
+        <option key={option.value} value={option.value}>
             {option.name}
         </option>
       )}
