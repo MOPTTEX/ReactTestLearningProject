@@ -21,7 +21,6 @@ function App() {
           <MyButton>Создать пост</MyButton>
       </form>
       <PostList posts={posts} title={'Список постов 1'}/>
-
     </div>
   );
 }
