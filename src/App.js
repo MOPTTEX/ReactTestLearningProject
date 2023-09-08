@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import "./styles/App.css";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
@@ -15,14 +15,16 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("");
 
   function getSortedPosts() {
-    console.log("отработала функция сортед постс")
+    
+  }
+
+  const sortedPosts = useMemo(() => {
+    console.log("first")
     if(selectedSort) {
       return [...posts].sort((a, b) => a[selectedSort].localeCompare(b[selectedSort]))
     }
     return posts;
-  }
-
-  const sortedPosts = getSortedPosts();
+  }, [selectedSort, posts]);
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
