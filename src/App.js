@@ -43,6 +43,9 @@ function App() {
       </MyModal>
       <hr style={{ margin: "15px 0" }} />
       <PostFilter filter={filter} setFilter={setFilter} />
+      {postError &&
+        <h1>Произогла ошибка ${postError}</h1>
+      }
       {isPostsLoading
         ? <div style={{display: 'flex', justifyContent: 'center', marginTop: 50}}><Loader/></div>
         : <PostList
