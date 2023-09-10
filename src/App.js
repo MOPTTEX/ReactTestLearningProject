@@ -9,7 +9,7 @@ import { usePosts } from "./hooks/usePosts";
 import PostService from "./API/PostService";
 import Loader from "./components/Loader/Loader";
 import { useFetching } from "./hooks/useFetching";
-import { getPagesArray, getPageCount } from './utils/pages';
+import { getPagesArray, getPageCount } from "./utils/pages";
 function App() {
   const [posts, setPosts] = useState([]);
 
@@ -40,7 +40,6 @@ function App() {
   const removePost = (post) => {
     setPosts(posts.filter((p) => p.id !== post.id));
   };
-  console.log(totalPages)
   return (
     <div className="App">
       <MyButton style={{ marginTop: 30 }} onClick={() => setModal(true)}>
@@ -65,7 +64,10 @@ function App() {
           title={"Список постов "}
         />
       )}
-      {pagesArray.map(p =><MyButton>{p}</MyButton>)}
+      <div className="page__wrapper"></div>
+      {pagesArray.map((p) => (
+        <span className={page === p ? "page page__current" : "page"}>{p}</span>
+      ))}
     </div>
   );
 }
