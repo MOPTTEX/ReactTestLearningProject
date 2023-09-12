@@ -66,7 +66,7 @@ function App() {
       )}
       <div className="page__wrapper"></div>
       {pagesArray.map((p) => (
-        <span className={page === p ? "page page__current" : "page"}>{p}</span>
+        <span ket={p} className={page === p ? "page page__current" : "page"}>{p}</span>
       ))}
     </div>
   );
