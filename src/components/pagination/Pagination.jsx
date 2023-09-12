@@ -9,7 +9,7 @@ export default function Pagination({totalPages, page, changePage}) {
     {pagesArray.map((p) => (
       <span 
       onClick={() => changePage(p)}
-      ket={p} 
+      key={p} 
       className={page === p ? "page page__current" : "page"}>{p}</span>
     ))}
     </div>
