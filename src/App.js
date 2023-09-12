@@ -30,7 +30,7 @@ function App() {
 
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, [page]);
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
@@ -40,6 +40,10 @@ function App() {
   const removePost = (post) => {
     setPosts(posts.filter((p) => p.id !== post.id));
   };
+
+  const changePage = (page) => {
+    setPage(page);
+  }
   return (
     <div className="App">
       <MyButton style={{ marginTop: 30 }} onClick={() => setModal(true)}>
@@ -67,7 +71,7 @@ function App() {
       <div className="page__wrapper"></div>
       {pagesArray.map((p) => (
         <span 
-        onClick={() => setPage(p)}
+        onClick={() => changePage(p)}
         ket={p} 
         className={page === p ? "page page__current" : "page"}>{p}</span>
       ))}
