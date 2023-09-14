@@ -7,7 +7,7 @@ import { AuthContext } from './../context/index';
 
 export default function AppRouters() {
 const {isAuth} = useContext(AuthContext)
-console.log(isAuth)
+
   return isAuth ? (
     <Routes>
       {privateRouters.map((route) => (
