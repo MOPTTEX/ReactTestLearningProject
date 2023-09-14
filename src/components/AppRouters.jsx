@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import Posts from "./../pages/Posts";
 import { privateRouters, publicRoutes, routes } from "../router";
 import Login from "../pages/Login";
+import { AuthContext } from './../context/index';
 
 export default function AppRouters() {
-  const isAuth = false;
-
+const {isAuth} = useContext(AuthContext)
+console.log(isAuth)
   return isAuth ? (
     <Routes>
       {privateRouters.map((route) => (
